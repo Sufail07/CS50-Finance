@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title%}
+    Quote
+{% endblock %}
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input type="text" id="sym" name="symbol" class="form-control mx-auto w-auto" placeholder="Symbol">
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    {% if quote %}
+        <div id="quote"> A share of {{ quote["name"] }} costs {{ quote['price']}} </div>
+    {% endif %}
+    {{ error }}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1> Welcome, {{ username }}</h1>
+<table>
+    <tr>
+        <th>
+            Stocks owned
+        </th>
+        <th>
+            Price per stock
+        </th>
+        <th>
+            Shares
+        </th>
+        <th>
+            Total value
+        <th>
+            Balance
+        </th>
+    </tr>
+    {% for each in stocks %}
+        <tr>
+            <td>{{ each["stock_name"] }}</td>
+            <td>{{ each["price_per_stock"] }}</td>
+            <td>{{ each["shares"] }}</td>
+            <td>{{ (each["price_per_stock"] * each["shares"]) | round }}</td>
+            <td >{{ balance['cash'] | round }}</td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+{% endblock %}

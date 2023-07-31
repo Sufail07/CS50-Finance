@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<table>
+    <tr>
+        <th>
+            Transaction type
+        </th>
+        <th>
+            Company
+        </th>
+        <th>
+            Shares
+        </th>
+        <th>
+            Total value
+        </tr>
+    </tr>
+    {% for each in history %}
+        <tr>
+            <td>{{ each["transaction_type"] }}</td>
+            <td>{{ each["Company"] }}</td>
+            <td>{{ each["shares"] }}</td>
+            <td >{{ each["total_price"] | round }}</td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %}

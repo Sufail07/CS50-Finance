@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<form action="/buy" method="post" onsubmit="onFormSubmit();">
+    <div class="mb-3">
+        <input type="text" id="sym" name="symbol" class="form-control mx-auto w-auto" placeholder="Symbol">
+    </div>
+    <div class="mb-3">
+        <input type="number" id="shares_number" class="form-control mx-auto w-auto" name="shares" placeholder="No. of shares">
+    </div>
+    <button class="btn btn-success" type="submit">Buy</button>
+</form>
+<div id="password-error" style="position: relative; top: 15px;">{{ error }}</div>
+
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+{{ username }}
+{% endblock %}
